@@ -1,0 +1,19 @@
+com.mysql.cj.jdbc.ClientPreparedStatement: SELECT Guitar.gid, Brand.Brand, Model.Model, Color.Color, nW.Wood, bW.Wood, tW.Wood, fbW.Wood, Neck.Neck, nPB.PickupBrand as NeckPickupBrand, nPM.PickupModel as NeckPickupModel, mPB.PickupBrand as MiddlePickupBrand, mPM.PickupModel as MiddlePickupModel, bPB.PickupBrand as BridgePickupBrand, bPM.PickupModel as BridgePickupModel, Guitar.conditionid, Country.Country FROM Guitar
+ LEFT JOIN Brand on Guitar.bid = Brand.bid
+ LEFT JOIN Model on Guitar.mid = Model.mid AND Guitar.bid = Model.bid
+ LEFT JOIN Color on Guitar.cid = Color.cid
+ LEFT JOIN Wood nW on Guitar.nWid = nW.wid
+ LEFT JOIN Wood bW on Guitar.bWid = bW.wid
+ LEFT JOIN Wood tW on Guitar.tWid = tW.wid
+ LEFT JOIN Wood fbW on Guitar.fbWid = fbW.wid
+ LEFT JOIN PickupBrand nPB on Guitar.nPBid = nPB.PBid
+ LEFT JOIN PickupBrand bPB on Guitar.bPBid = bPB.PBid
+ LEFT JOIN Pickup nPM on Guitar.nPMid = nPM.PMid AND Guitar.nPBid = nPM.PBid
+ LEFT JOIN Pickup bPM on Guitar.bPMid = bPM.PMid AND Guitar.bPBid = bPM.PBid
+ LEFT JOIN PickupBrand mPB on Guitar.mPBid = mPB.PBid
+ LEFT JOIN Pickup mPM on Guitar.mPMid = mPM.PMid AND Guitar.mPBid = mPM.PBid
+ LEFT JOIN Country on Guitar.countryid = Country.countryid
+ LEFT JOIN Neck on Guitar.nid = Neck.nid
+ ORDER BY gid ASC
+com.mysql.cj.jdbc.CallableStatement: CALL GetAllGuitars() 
+com.mysql.cj.jdbc.CallableStatement: CALL GetAllGuitars() 

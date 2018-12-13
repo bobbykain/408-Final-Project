@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <TabPane prefHeight="800.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Query">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1300.0">
+                            <children>
+                                <TableView fx:id="guitarTable" editable="true" layoutX="20.0" layoutY="20.0" prefHeight="500.0" prefWidth="1260.0" tableMenuButtonVisible="true">
+
+                                 </TableView>
+                                 <Button fx:id="displayAllButton" layoutX="20.0" layoutY="550.0" mnemonicParsing="false" onAction="#displayAllGuitars" prefHeight="25.0" prefWidth="100.0" text="Display All" />
+                                 <Button fx:id="searchButton" layoutX="140.0" layoutY="550.0" mnemonicParsing="false" onAction="#searchGuitars" prefHeight="25.0" prefWidth="100.0" text="Search" />
+                                 <Button fx:id="clearButton" layoutX="260.0" layoutY="550.0" mnemonicParsing="false" onAction="#clearTable" prefHeight="25.0" prefWidth="100.0" text="Clear" />
+                                 <Button fx:id="exportButton" layoutX="380.0" layoutY="550.0" mnemonicParsing="false" onAction="#exportToCSV" prefHeight="25.0" prefWidth="100.0" text="Export" />
+
+                                 <Label fx:id="brandLabel" layoutX="20" layoutY="595" text="Brand" />
+                                 <ChoiceBox fx:id="brandChoiceBox" layoutX="100" layoutY="590" onAction="#buildModelChoiceBox" prefWidth="150.0" />
+
+                                 <Label fx:id="modelLabel" layoutX="20" layoutY="635" text="Model" />
+                                 <ChoiceBox fx:id="modelChoiceBox" layoutX="100" layoutY="630" prefWidth="150.0" />
+
+                                 <Label fx:id="neckWoodLabel" layoutX="20" layoutY="675" text="Neck Wood" />
+                                 <ChoiceBox fx:id="neckWoodChoiceBox" layoutX="100" layoutY="670" prefWidth="150.0" />
+
+                                 <Label fx:id="bodyWoodLabel" layoutX="20" layoutY="715" text="Body Wood" />
+                                 <ChoiceBox fx:id="bodyWoodChoiceBox" layoutX="100" layoutY="710" prefWidth="150.0" />
+
+                                 <Label fx:id="fingerBoardWoodLabel" layoutX="270" layoutY="595" text="Finger Board Wood" />
+                                 <ChoiceBox fx:id="fingerBoardWoodChoiceBox" layoutX="395" layoutY="590" prefWidth="150.0" />
+
+                                 <Label fx:id="colorLabel" layoutX="270" layoutY="635" text="Color" />
+                                 <ChoiceBox fx:id="colorChoiceBox" layoutX="395" layoutY="630" prefWidth="150.0" />
+
+                                 <Label fx:id="neckLabel" layoutX="270" layoutY="675" text="Neck" />
+                                 <ChoiceBox fx:id="neckChoiceBox" layoutX="395" layoutY="670" prefWidth="150.0" />
+
+                                 <Label fx:id="neckPickupBrandLabel" layoutX="270" layoutY="715" text="Neck Pickup Brand" />
+                                 <ChoiceBox fx:id="neckPickupBrandChoiceBox" layoutX="395" layoutY="710" onAction="#buildneckPickupModelChoiceBox" prefWidth="150.0" />
+
+                                 <Label fx:id="neckPickupModelLabel" layoutX="565" layoutY="595" text="Neck Pickup Model" />
+                                 <ChoiceBox fx:id="neckPickupModelChoiceBox" layoutX="700" layoutY="590" prefWidth="150.0" />
+
+                                 <Label fx:id="middlePickupBrandLabel" layoutX="565" layoutY="635" text="Middle Pickup Brand" />
+                                 <ChoiceBox fx:id="middlePickupBrandChoiceBox" layoutX="700" layoutY="630" onAction="#buildmiddlePickupModelChoiceBox" prefWidth="150.0" />
+
+                                 <Label fx:id="middlePickupModelLabel" layoutX="565" layoutY="675" text="Middle Pickup Model" />
+                                 <ChoiceBox fx:id="middlePickupModelChoiceBox" layoutX="700" layoutY="670" prefWidth="150.0" />
+
+                                 <Label fx:id="bridgePickupBrandLabel" layoutX="565" layoutY="715" text="Bridge Pickup Brand" />
+                                 <ChoiceBox fx:id="bridgePickupBrandChoiceBox" layoutX="700" layoutY="710" onAction="#buildbridgePickupModelChoiceBox" prefWidth="150.0" />
+
+                                 <Label fx:id="bridgePickupModelLabel" layoutX="870" layoutY="595" text="Bridge Pickup Model" />
+                                 <ChoiceBox fx:id="bridgePickupModelChoiceBox" layoutX="1010" layoutY="590" prefWidth="150.0" />
+
+                                 <Label fx:id="countryLabel" layoutX="870" layoutY="635" text="Country" />
+                                 <ChoiceBox fx:id="countryChoiceBox" layoutX="1010" layoutY="630" prefWidth="150.0" />
+
+                                 <Label fx:id="conditionLabel" layoutX="870" layoutY="675" text="Condition" />
+                                 <ChoiceBox fx:id="conditionChoiceBox" layoutX="1010" layoutY="670" prefWidth="150.0" />
+
+                                <Label fx:id="topWoodLabel" layoutX="870" layoutY="715" text="Top Wood" />
+                                <ChoiceBox fx:id="topWoodChoiceBox" layoutX="1010" layoutY="710" prefWidth="150.0" />
+
+                                 <Separator layoutX="0" layoutY="540" prefHeight="0.0" prefWidth="1300.0" />
+                             </children>
+                         </AnchorPane>
+                     </content>
+                 </Tab>
+                 <Tab text="CRUD">
+                     <content>
+                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1300.0">
+                             <children>
+                                 <Button fx:id="Create" layoutX="90" layoutY="590" mnemonicParsing="false" onAction="#insertGuitar" prefHeight="25.0" prefWidth="100.0" text="Create" />
+                                 <Button fx:id="Update" layoutX="390" layoutY="135" mnemonicParsing="false" onAction="#updateGuitar" prefHeight="25.0" prefWidth="100.0" text="Update" />
+                                 <Button fx:id="Delete" layoutX="675" layoutY="65" mnemonicParsing="false" onAction="#deleteGuitar" prefHeight="25.0" prefWidth="100.0" text="Delete" />
+
+                                 <Separator layoutX="285.0" layoutY="0.0" orientation="VERTICAL" prefHeight="800.0" />
+                                 <Separator layoutX="585.0" layoutY="0.0" orientation="VERTICAL" prefHeight="800.0" />
+                                 <Separator layoutX="870.0" layoutY="0.0" orientation="VERTICAL" prefHeight="800.0" />
+
+                                 <TextField fx:id="brand_c" layoutX="90.0" layoutY="30.0" />
+                                 <Label layoutX="15.0" layoutY="35.0" text="Brand" />
+                                 <TextField fx:id="model_c" layoutX="90.0" layoutY="65.0" />
+                                 <Label layoutX="15.0" layoutY="70.0" text="Model" />
+                                 <TextField fx:id="neck_wood_c" layoutX="90.0" layoutY="100.0" />
+                                 <Label layoutX="15.0" layoutY="105" text="Neck Wood" />
+                                 <TextField fx:id="body_wood_c" layoutX="90.0" layoutY="135.0" />
+                                 <Label layoutX="15.0" layoutY="140" text="Body Wood" />
+                                 <TextField fx:id="finger_board_wood_c" layoutX="90.0" layoutY="170.0" />
+                                 <Label layoutX="15.0" layoutY="175" text="FB Wood" />
+                                 <TextField fx:id="color_c" layoutX="90.0" layoutY="205" />
+                                 <Label layoutX="15.0" layoutY="210" text="Color" />
+                                 <TextField fx:id="neck_c" layoutX="90.0" layoutY="240" />
+                                 <Label layoutX="15.0" layoutY="245" text="Neck" />
+                                 <TextField fx:id="neck_pb_c" layoutX="90.0" layoutY="275" />
+                                 <Label layoutX="15.0" layoutY="280" text="Neck PB" />
+                                 <TextField fx:id="neck_pm_c" layoutX="90.0" layoutY="310" />
+                                 <Label layoutX="15.0" layoutY="315" text="Neck PM" />
+                                 <TextField fx:id="middle_pb_c" layoutX="90.0" layoutY="345" />
+                                 <Label layoutX="15.0" layoutY="350" text="Middle PB" />
+                                 <TextField fx:id="middle_pm_c" layoutX="90.0" layoutY="380" />
+                                 <Label layoutX="15.0" layoutY="385" text="Middle PM" />
+                                 <TextField fx:id="bridge_pb_c" layoutX="90.0" layoutY="415" />
+                                 <Label layoutX="15.0" layoutY="420" text="Bridge PB" />
+                                 <TextField fx:id="bridge_pm_c" layoutX="90.0" layoutY="450" />
+                                 <Label layoutX="15.0" layoutY="455" text="Bridge PM" />
+                                 <TextField fx:id="country_c" layoutX="90.0" layoutY="485" />
+                                 <Label layoutX="15.0" layoutY="490" text="Country" />
+                                 <TextField fx:id="condition_c" layoutX="90.0" layoutY="520" />
+                                 <Label layoutX="15.0" layoutY="525" text="Condition" />
+                                 <TextField fx:id="top_wood_c" layoutX="90.0" layoutY="555" />
+                                 <Label layoutX="15.0" layoutY="560" text="Top Wood" />
+
+                                 <Label layoutX="315" layoutY="35" text="Guitar ID" />
+                                 <TextField fx:id="guitarIDUpdateTextField" layoutX="390.0" layoutY="30.0" />
+                                 <Label layoutX="315" layoutY="70" text="Column" />
+                                 <ChoiceBox fx:id="colUpdateChoiceBox" layoutX="390" layoutY="65" prefWidth="168.0" />
+                                 <Label layoutX="315" layoutY="105.0" text="New Value" />
+                                 <TextField fx:id="newValueTextField" layoutX="390.0" layoutY="100.0" />
+
+                                 <TextField fx:id="guitar_id_d" layoutX="675" layoutY="30" />
+                                 <Label layoutX="615" layoutY="35" text="Guitar ID" />
+                                 <CheckBox fx:id="deleteCheckbox" layoutX="675" layoutY="100" mnemonicParsing="false" text="Confirm" />
+
+                                 <TextArea fx:id="outputTextArea" layoutX="900" layoutY="30" prefHeight="300.0" prefWidth="370.0" />
+                             </children>
+                         </AnchorPane>
+                     </content>
+                 </Tab>
+             </tabs>
+         </TabPane>
+     </children>
+ </AnchorPane>
